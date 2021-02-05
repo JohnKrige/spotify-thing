@@ -1,0 +1,52 @@
+@import './config';
+
+.playlist-container {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.playlist-container{
+    text-align: center;
+}
+
+.header-title{
+    color: $primary-color;
+    font-size: $page-heading-font-size;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.pl-div{
+    margin: 20px 0;
+    background-color: $box-color;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.sub-header-title{
+    font-size: 20px;
+    color: $accent-color;
+    margin-bottom: 20px;
+}
+
+.pl-button{
+    margin-top: 20px;
+    @include colorButtonSmall($primary-color);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.back-from-playlists{
+    color: $box-color;
+    @include colorButtonSmall(white);
+    margin-top: 20px;
+}
+
+#existing-pl{
+    max-width: 90%;
+}

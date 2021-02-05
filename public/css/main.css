@@ -1,0 +1,612 @@
+.results {
+  background-color: #373737;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.results-border {
+  border: 2px solid #BF0DFF;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results-heading {
+  margin-bottom: 10px;
+  margin: 0 auto;
+}
+
+.results-hide {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+}
+
+.results-hide .results-hide-btn {
+  width: 10px;
+}
+
+.results-display-section {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  border: 2px solid white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.recommend-btn {
+  width: 25px;
+}
+
+.results-track-name, .results-artist-name {
+  color: #BF0DFF;
+  font-weight: 700;
+}
+
+.results-details-track, .results-details-artist {
+  margin: 5px 0;
+}
+
+.results-details {
+  width: 70%;
+}
+
+.results-play-sample, .results-options {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.results-options {
+  position: relative;
+}
+
+.song-dropdown-options {
+  position: absolute;
+  top: 35px;
+  right: -30px;
+  display: inline-block;
+  background-color: white;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.song-dropdown-options li {
+  color: #373737;
+  padding: 5px;
+  border-radius: 1px;
+  border: 1px solid #373737;
+  text-align: center;
+}
+
+.result-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add-to-playlist {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF007B;
+  text-align: center;
+}
+
+.new-result-search {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+}
+
+.playlist-container {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.playlist-container {
+  text-align: center;
+}
+
+.header-title {
+  color: #FF007B;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.pl-div {
+  margin: 20px 0;
+  background-color: #373737;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sub-header-title {
+  font-size: 20px;
+  color: #BF0DFF;
+  margin-bottom: 20px;
+}
+
+.pl-button {
+  margin-top: 20px;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF007B;
+  text-align: center;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.back-from-playlists {
+  color: #373737;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#existing-pl {
+  max-width: 90%;
+}
+
+h4, h3, h2, h1, h5, h6, p, input {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #7979ff;
+  color: white;
+  font-weight: bold;
+  top: 14%;
+  height: 80px;
+  width: 320px;
+}
+
+.flash-message .flash-message-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  transform: rotate(45deg);
+  font-size: 25px;
+}
+
+.fullScreenView {
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul, ol, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  padding: 0 20px;
+  margin: 0;
+  color: white;
+  background-color: #1F1F1F;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.help {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.header .logo {
+  color: #FF007B;
+  font-size: 30px;
+}
+
+.header .user-section {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  font-size: 20px;
+}
+
+.user-dropdown {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.user-dropdown-img {
+  width: 10px;
+}
+
+.user-div {
+  position: relative;
+}
+
+.user-dropdown-logout-select {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  background-color: white;
+  color: #1F1F1F;
+  padding: 5px 20px;
+  border-radius: 2px;
+}
+
+.home-login-container {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.poster {
+  background-color: #BF0DFF;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.poster-main-message {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.poster-sub-message {
+  font-weight: bold;
+  margin: 10px 0;
+  margin-top: 20px;
+}
+
+.body-message-section {
+  padding: 0 10px;
+  margin: 70px 0;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+}
+
+.login-section-text {
+  display: inline-block;
+}
+
+.login-section a {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF007B;
+  text-align: center;
+  padding: 5px;
+}
+
+.spotify-logo {
+  width: 100px;
+  margin-left: 7px;
+}
+
+.top-listens-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.top-listens-buttons .top-listens-button {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+}
+
+.top-listens {
+  margin-bottom: 10px;
+}
+
+.top-listens-title {
+  color: #BF0DFF;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.top-listens-list {
+  text-align: center;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.recommend-input {
+  width: 100%;
+}
+
+.recommendation-search-fields {
+  margin-bottom: 15px;
+}
+
+.recommendation-header {
+  position: relative;
+  margin: 30px 0;
+}
+
+.recommendation-header .recommendation-header-title {
+  color: #FF007B;
+  text-align: center;
+}
+
+.recommendation-header .recommendation-help {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+  padding: 5px 7px;
+}
+
+.recommendation-features {
+  background-color: #373737;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.recommendation-heading {
+  color: #BF0DFF;
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.seed-div {
+  margin: 5px 0;
+}
+
+.seed-div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.audio-feature-section {
+  display: flex;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.audio-feature-section-left {
+  width: 90%;
+}
+
+.audio-feature-section-right {
+  width: 10%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.audio-feature-mute-div {
+  float: right;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-tick {
+  width: 15px;
+  padding: 5px;
+}
+
+.feature-off {
+  color: gray;
+}
+
+.audio-feature-section-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.audio-feature-slider {
+  width: 100%;
+}
+
+.audio-features-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -35.5px;
+}
+
+.audio-features-submit {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF007B;
+  text-align: center;
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+  border: none;
+}
+
+.audio-features-advanced {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+}
+
+.recommend-input-list-item {
+  display: inline;
+}
+
+.recommend-input-list-suggestions {
+  margin: 10px 0 5px 0;
+}
+
+.recommend-input-list-div {
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  border-radius: 2px;
+  padding: 3px 5px;
+  margin: 2px 0;
+}
+
+.max-seeds-reached {
+  font-size: 12px;
+  margin: 5px;
+}
+
+.selected-seeds-type h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.selected-seeds-type .selected-item-div {
+  margin: 5px 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.selected-seeds-type .selected-item-remove {
+  font-weight: bold;
+  transform: rotate(45deg);
+  font-size: 14px;
+  text-align: center;
+  color: black;
+  margin: 0;
+}
+
+.selected-seeds-type .select-item-text {
+  width: 90%;
+}
+
+.selected-seeds-type .select-item-remove-div {
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 3px;
+  margin-left: 10px;
+  max-width: 10%;
+}
+
+.feature-section-title {
+  padding-top: 15px;
+  font-size: 14px;
+  border-top: 1px solid white;
+  margin-top: 20px;
+}
+
+.help-heading {
+  color: #FF007B;
+  text-align: center;
+}
+
+.help-par {
+  margin: 20px 0;
+}
+
+.help-back {
+  display: inline-block;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF007B;
+  text-align: center;
+}
+
+.help-back-div {
+  display: flex;
+  justify-content: center;
+}
+
+.help-highlight {
+  color: #BF0DFF;
+  font-weight: bold;
+}
+/*# sourceMappingURL=main.css.map */

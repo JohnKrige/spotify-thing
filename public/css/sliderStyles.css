@@ -1,0 +1,153 @@
+:root {
+    --bar-on: white;
+    --bar-off: gray;;
+    --primary: #FF007B;
+  }
+
+/* CSS style for when the slider feature is used/on */
+.audio-feature-slider {
+    -webkit-appearance: none;
+        margin: 0;
+        width: 100%;
+  }
+  .audio-feature-slider:focus {
+    outline: none;
+  }
+  .audio-feature-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: var(--bar-on);
+    border-radius: 1.3px;
+  }
+  .audio-feature-slider::-webkit-slider-thumb {
+    height: 12px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--primary);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3px;
+  }
+  .audio-feature-slider:focus::-webkit-slider-runnable-track {
+    background: var(--bar-on);
+  }
+  .audio-feature-slider::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: var(--bar-on);
+    border-radius: 1.3px;
+  }
+  .audio-feature-slider::-moz-range-thumb {
+    height: 9px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--primary);
+    cursor: pointer;
+  }
+  .audio-feature-slider::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  .audio-feature-slider::-ms-fill-lower {
+    background: var(--bar-on);
+    border-radius: 2.6px;
+  }
+  .audio-feature-slider::-ms-fill-upper {
+    background: var(--bar-on);
+    border-radius: 2.6px;
+  }
+  .audio-feature-slider::-ms-thumb {
+    height: 9px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--primary);
+    cursor: pointer;
+  }
+  .audio-feature-slider:focus::-ms-fill-lower {
+    background: var(--bar-on);
+  }
+  .audio-feature-slider:focus::-ms-fill-upper {
+    background: var(--bar-on);
+  }
+
+
+  /* CSS style for when the slider feature is used/off */
+
+.audio-feature-slider.feature-off {
+    -webkit-appearance: none;
+        margin: 0;
+        width: 100%;
+  }
+  .audio-feature-slider.feature-off:focus {
+    outline: none;
+  }
+  .audio-feature-slider.feature-off::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: var(--bar-off);
+    border-radius: 1.3px;
+  }
+  .audio-feature-slider.feature-off::-webkit-slider-thumb {
+    height: 12px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--bar-off);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3px;
+  }
+  .audio-feature-slider.feature-off:focus::-webkit-slider-runnable-track {
+    background: var(--bar-off);
+  }
+  .audio-feature-slider.feature-off::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: var(--bar-off);
+    border-radius: 1.3px;
+  }
+  .audio-feature-slider.feature-off::-moz-range-thumb {
+    height: 9px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--bar-off);
+    cursor: pointer;
+  }
+  .audio-feature-slider.feature-off::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  .audio-feature-slider.feature-off::-ms-fill-lower {
+    background: var(--bar-off);
+    border-radius: 2.6px;
+  }
+  .audio-feature-slider.feature-off::-ms-fill-upper {
+    background: var(--bar-off);
+    border-radius: 2.6px;
+  }
+  .audio-feature-slider.feature-off::-ms-thumb {
+    height: 9px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--bar-off);
+    cursor: pointer;
+  }
+  .audio-feature-slider.feature-off:focus::-ms-fill-lower {
+    background: var(--bar-off);
+  }
+  .audio-feature-slider.feature-off:focus::-ms-fill-upper {
+    background: var(--bar-off);
+  }

@@ -1,0 +1,26 @@
+<div class="top-listens-buttons">
+   <p class="top-listens-button top-listens-button__artists">Top Artists</p>
+   <p class="top-listens-button top-listens-button__tracks">Top Tracks</p>
+</div>
+
+
+<div class="top-listens top-listens__tracks invisible">
+   <p class="top-listens-title">Top Tracks - Last 4 weeks</p>
+   <ul class="top-listens-list">
+      <% data.topTracks.forEach( track =>  { %>
+         <li> <%= track.name %></li> 
+      <%}) %>
+   </ul>
+</div>
+
+<div class="top-listens top-listens__artists invisible">
+   <p class="top-listens-title">Top Artists - Last 4 weeks</p>
+   <ul class="top-listens-list">
+      <% data.topArtists.forEach( artist =>  { %>
+         <li> <%= artist.name %></li> 
+      <%}) %>
+   </ul>
+</div>
+
+
+

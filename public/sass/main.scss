@@ -1,0 +1,440 @@
+@import './config';
+@import './slider';
+@import './results';
+@import './playlist';
+
+h4,h3,h2,h1,h5,h6,p,input{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    margin: 0;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.flash-message{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgb(121, 121, 255);
+    color: white;
+    font-weight: bold;
+    top: 14%;
+    height: 80px;
+    width: 320px;
+
+    .flash-message-close-button{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px 10px;
+        transform: rotate(45deg);
+        font-size: 25px;
+    }
+}
+
+.fullScreenView{
+    height: 100vh;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul, ol, li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    position: relative;
+    padding: 0 20px;
+    margin: 0;
+    color: $default-color;
+    background-color: $background-color;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    // height: 100vh; // Remove
+    // overflow: hidden; //Remove
+}
+
+.help{
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+// Header styles
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    .logo{
+        color: $primary-color;
+        font-size: $logo-font-size;
+    }
+    
+    .user-section{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.user{
+    font-size: $user-font-size;
+}
+
+.user-dropdown{
+    @include colorButtonSmall($accent-color);
+    margin-left: 5px;
+}
+
+.user-dropdown-img{
+    width: 10px;
+}
+
+.user-div{
+    position: relative;
+}
+
+.user-dropdown-logout-select{
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: white;
+    color: $background-color;
+    padding: 5px 20px;
+    border-radius: 2px;
+}
+
+
+
+// Home page login styles
+
+.home-login-container{
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.poster{
+    background-color: $accent-color;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.poster-main-message{
+    font-size: $page-heading-font-size;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.poster-sub-message{
+    font-weight: bold;
+    margin: 10px 0;
+    margin-top: 20px;
+}
+
+.body-message-section{
+    padding: 0 10px;
+    margin: 70px 0;
+}
+
+
+.login-section{
+    display: flex;
+    justify-content: center;
+}
+
+.login-section-text{
+    display: inline-block;
+    // margin-top: 50px;
+}
+
+.login-section a{
+    font-size: $page-heading-font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include colorButtonSmall($primary-color);
+    padding: 5px;
+}
+
+.spotify-logo{
+    width: 100px;
+    margin-left: 7px;
+}
+
+// Home page - already loggen in
+.top-listens-buttons{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+    .top-listens-button{
+        @include colorButtonSmall;
+    }
+}
+
+.top-listens{
+    margin-bottom: 10px;
+}
+
+.top-listens-title{
+    color: $accent-color;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.top-listens-list{
+    text-align: center;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+.recommend-input{
+    width: 100%;
+}
+
+.recommendation-search-fields{
+    margin-bottom: 15px
+}
+
+.recommendation-header{
+    position: relative;
+    margin: 30px 0;
+
+    .recommendation-header-title{
+        color: $primary-color;
+        text-align: center;
+    }
+
+    .recommendation-help{
+        position:absolute;
+        right: 0;
+        bottom: 0;
+        @include colorButtonSmall;
+        padding: 5px 7px;
+    }
+}
+
+.recommendation-features{
+    background-color: $box-color;
+    padding: 20px;
+    border-radius: 5px;
+}
+.recommendation-heading{
+    color: $accent-color;
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.seed-div{
+    margin: 5px 0
+}
+
+.seed-div{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+
+.audio-feature-section{
+    display: flex;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.audio-feature-section-left{
+    width: 90%;
+}
+
+.audio-feature-section-right{
+    width: 10%;
+    margin-left: 10px; 
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.audio-feature-mute-div{
+    float: right;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-tick{
+    width: 15px;
+    padding: 5px;
+}
+
+.feature-off{
+    color: gray;
+}
+
+.audio-feature-section-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.audio-feature-slider{
+    width: 100%;
+}
+
+.audio-features-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -35.5px; //(container padding: 20px + (fontsize: 18px + padding-top: 5 padding-bot: 5)/2
+}
+
+.audio-features-submit{
+    @include colorButtonSmall($primary-color);
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+    border: none;
+}
+
+.audio-features-advanced{
+    @include colorButtonSmall;   
+}
+
+.recommend-input-list-item{
+    display: inline;
+}
+
+.recommend-input-list-suggestions{
+    margin: 10px 0 5px 0;
+}
+
+.recommend-input-list-div{
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    border-radius: 2px;
+    padding: 3px 5px;
+    margin: 2px 0;
+}
+
+.max-seeds-reached{
+    font-size: 12px;
+    margin: 5px;
+}
+
+
+.selected-seeds-type{
+    h3{
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+}
+
+    .selected-item-div{
+        margin: 5px 0;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+
+    .selected-item-remove{
+        font-weight: bold;
+        transform: rotate(45deg);
+        font-size: 14px;
+        text-align: center;
+        color: black;
+        margin: 0; 
+    }
+
+    .select-item-text{
+        width: 90%;
+    }
+
+    .select-item-remove-div{
+        background-color: white;
+        border-radius: 5px;
+        padding: 0 3px;
+        margin-left: 10px;
+        max-width: 10%;
+    }
+}
+
+//advanced features
+.feature-section-title{
+    // text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+    border-top: 1px solid white;
+    margin-top: 20px;
+}
+
+.help-heading{
+    color: $primary-color;
+    text-align: center;
+}
+
+.help-par{
+    margin: 20px 0;
+}
+
+.help-back{
+    display: inline-block;
+    @include colorButtonSmall($primary-color);
+}
+
+.help-back-div{
+    display: flex;
+    justify-content: center;
+}
+
+.help-highlight{
+    color: $accent-color;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+        <!-- <a href="/logout">Log out</a><br>
+        <a href="/refresh_token"> Refresh spotify token</a> -->
+    
+        <%- include('playlist')%>
+        <% if(data.topTracks || data.topArtists){ %>
+            <%- include('topArtist')%>
+        <% } %>
+
+        <%- include('recommend')%>
+        
