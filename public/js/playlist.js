@@ -16,9 +16,14 @@ const playListToggle = (polarity) => {
 // Fetches the user's playlists
 const returnPlaylists = async () => {
     const resp= await fetch('/playlists');
-    const json = await resp.json();
-    existingPlaylistsReturned = json;
-    createPlDropdown(json);
+    if(resp.status === 200 ){
+        const json = await resp.json();
+        existingPlaylistsReturned = json;
+        createPlDropdown(json);
+    }
+    else{
+        promptTokenRefresh();
+    }
 }
 
 // Adding option elements to the playlist dropdown (select) element
@@ -45,7 +50,7 @@ addToExistingPlButton.addEventListener('click', async e => {
     bodyPL.id = plId;
     bodyPL.uris = uris // this is a var stored in the recommend.js file
 
-    const postToPl = await fetch('/addToExistingPl',{
+    const resp = await fetch('/addToExistingPl',{
         method: 'POST',
         body: JSON.stringify(bodyPL),
         headers: {
@@ -53,13 +58,13 @@ addToExistingPlButton.addEventListener('click', async e => {
           }
     });
 
-    const json = await postToPl.json();
-    if(json){
+    if(resp.status === 200){
+    const json = await resp.json();
         resetPlaylistInputs();
         flashMessage('Songs added to playlist');
     }
     else{
-        console.log('Whoopsy poopsy, something went wrong')
+        promptTokenRefresh();
     }
 });
 
@@ -77,7 +82,7 @@ newPlButton.addEventListener('click', async e => {
     const newName = document.querySelector('.new-pl').value;
     const jsonObj = {}
     jsonObj.name = newName;
-    const rdizzle = await fetch('/createPlaylist', {
+    const response = await fetch('/createPlaylist', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -86,14 +91,20 @@ newPlButton.addEventListener('click', async e => {
         body: JSON.stringify(jsonObj)
     });
 
-    returnPlaylists();
-    flashMessage('New playlist created');
+    console.log(response.status);
 
-    // const json = await response.json();
+    if(response.status === 200){
+        returnPlaylists();
+        flashMessage('New playlist created');
+        // const json = await response.json();
+    
+        newPlInput = document.querySelector('.new-pl');
+        newPlInput.innerText = '';
+        newPlInput.value = '';
+    } else {
+        promptTokenRefresh();
+    }
 
-    newPlInput = document.querySelector('.new-pl');
-    newPlInput.innerText = '';
-    newPlInput.value = '';
 });
 
 const backBtn = document.querySelector('.back-from-playlists');

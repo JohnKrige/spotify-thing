@@ -17,9 +17,33 @@
   align-items: center;
 }
 
+.recommendation-num-results-input {
+  color: transparent;
+  text-shadow: 0 0 0 black;
+  width: 30px;
+  text-align: center;
+}
+
+.recommendation-num-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.recommendation-num-results-header {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
 .results-heading {
   margin-bottom: 10px;
   margin: 0 auto;
+}
+
+.results-content {
+  max-height: 595px;
+  overflow-y: auto;
 }
 
 .results-hide {

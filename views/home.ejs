@@ -43,11 +43,23 @@
     <% } %>
 
     <div class="flash-message invisible">
-        <p class="flash-message-text">New playlist created</p>
+        <p class="flash-message-text"> My man</p>
         <p class="flash-message-close-button">+</p>
     </div>
 
-    <script src="js/playlist.js"></script>
+    <div class="refresh-token invisible">
+        <div class="refresh_token_container">
+            <div class ="refresh-token-text">
+                <h3 class="refresh_token-title">Your spotify token expired</h3>
+                <p>Upon logging in with Spotify, they grant you 1 hour access via a token. When the token expires you have to request a new token and you get to play for another hour.</p>
+            </div>
+            <a class="token-refresh-btn" href="/refresh_token">Refresh Token</a>
+        </div>
+    </div>
+
+
+
+<script src="js/playlist.js"></script>
 <script src="js/displayResults.js"></script>
 <script src="js/recommend.js"></script>
 <script src="js/topArtists.js"></script>

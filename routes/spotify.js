@@ -165,11 +165,11 @@ router.get('/search', async (req,res) => {
   );
 
   if(artists.status !== 200){
-    console.log('result not found, try refreshing the user token')
+    res.status(400).send('fail');
   } else {
     json = await artists.json();
     let result = getArtistData(json[typePlural].items, type);
-    res.json(result);
+    res.status(200).json(result);
   }
 });
 
@@ -180,9 +180,9 @@ router.get('/genres', async (req, res) => {
   const genres = await fetch(searchUrl, { headers });
   if(genres.status === 200){
     response = await genres.json();
-    res.send(response.genres);
+    res.status(200).send(response.genres);
   } else {
-    res.send('fail');
+    res.status(400).send();
   }
 });
 
@@ -192,6 +192,8 @@ router.get('/genres', async (req, res) => {
 router.post('/recommend', upload.none() , async (req, res) => {
   let seeds = JSON.parse(req.body.seeds);
   const { artist, track, genre } = produceSeedArray(seeds);
+  let limit = req.body.numTracks;
+  console.log(limit);
 
   const searchUrl = 'https://api.spotify.com/v1/recommendations?';
   const headers = { 'Authorization': 'Bearer ' + req.session.userAuth.access_token };
@@ -199,7 +201,7 @@ router.post('/recommend', upload.none() , async (req, res) => {
   queryObj.seed_artists = artist.join();
   queryObj.seed_tracks = track.join();
   queryObj.seed_genres = genre.join();
-  queryObj.limit = 5;
+  queryObj.limit = limit;
 
   let keys = Object.keys(req.body).filter( key => key !== "seeds");
   for(let key of keys){
@@ -213,10 +215,10 @@ router.post('/recommend', upload.none() , async (req, res) => {
   if(result.status === 200){
     const json = await result.json();
     const tracks = getDesiredInfo(json.tracks);
-    res.json(tracks);
+    res.status(200).json(tracks);
 
   } else {
-    console.log('Error fetching');
+      res.status(400).send();
   }
 });
 
@@ -235,10 +237,10 @@ router.get('/playlists', async (req,res) => {
       returnObj[item.id] = pl;
     }
 
-    res.json(returnObj);
+    res.status(200).json(returnObj);
 
   } else {
-      console.log('Error-playlists not fetched');
+      res.status(400).send();
   }
 });
 
@@ -263,10 +265,10 @@ router.post('/addToExistingPl', async (req,res) => {
 
   if(response.status === 201){
     console.log('success Mofo!')
-    res.json('success');
+    res.status(200).json('success');
   } else {
     console.log('Epic fail there china');
-    res.json('fail');
+    res.status(400).send();
   }
 });
 
@@ -290,9 +292,9 @@ router.post('/createPlaylist', async(req, res) => {
 
   if(response.status === 201){
     let json = response.json();
-    res.json('success');
+    res.status(200).send('success');
   } else {
-    res.json('failure');
+    res.status(400).send();
     console.log('Playlist creation failed');
   }
 });

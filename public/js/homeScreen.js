@@ -35,8 +35,7 @@ userDropdown.addEventListener('click', e => {
     logout.classList.toggle('invisible');
 
     window.addEventListener('click', hideMenu);
-})
-
+});
 
 const hideMenu = (e) => {
     if(e.target.getAttribute('class') !== 'user-dropdown-logout-select' && e.target.getAttribute('class') !== 'user-dropdown-img'){
@@ -77,7 +76,20 @@ const helpBack = document.querySelector('.help-back');
 helpBack.addEventListener('click', e => {
     help.classList.add('invisible');
     body.classList.remove('fullScreenView');
-})
+});
+
+const refreshModal = document.querySelector('.refresh-token');
+const refreshModalButton = document.querySelector('.token-refresh-btn');
+
+refreshModalButton.addEventListener('click', e => {
+    refreshModal.classList.add('invisible');
+});
+
+const promptTokenRefresh = () => {
+    refreshModal.classList.remove('invisible');
+};
+
+
 
 
 

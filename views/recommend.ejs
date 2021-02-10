@@ -5,52 +5,39 @@
 
  <div class="results invisible">
      <div class="results-border">
-         <div class="results-header">
+        <div class="results-header">
             <h3 class="results-heading">Your Results</h3>
             <button class="results-hide">
                 <img class="results-hide-btn" src="../imgs/up-arrow.svg" alt="hide results">
             </button>
          </div>
-        <div class="results-content">
-           <!-- <div class="results-display-section">
-            <div class="results-details">
-                <div class="results-details-track">
-                   <p class="results-track-name">Track name:<p> 
-                   <p> Lekker sokkie 69 </p>
-                </div>
-                <div class="results-details-artist">                
-                   <p class="results-artist-name">Artist(s):</p>
-                   <p> Wikus van Jaarsveld </p>
-                </div>
-             </div>
-             <div class="results-play-sample">
-               <img class="recommend-btn" src="../imgs/play-button.svg" alt="play sample button" track="${i}">
-             </div>
-             <div class="results-options">
-               <img class="recommend-btn recommend-track-options" src="../imgs/drop-down.svg" alt="dropdown options for result track" track="${i}">
-               <div class="song-dropdown-options invisible">
-                   <li>Add to playlist</li>
-                   <li>Open in browser</li>
-                   <li>Play on phone</li>
-                   <li>Remove from list</li>
-               </div>
-             </div>
-           </div> -->
-        </div>
+        <div class="results-content"></div>
      </div>
 
      <div class="result-buttons">
          <a class="new-result-search result-button" href="/"> New Search</a>
          <p class="add-to-playlist result-button">Add all to playlist</p>
      </div>
- </div>
+</div>
+
+
+
+<div class="recommendation-num-results">
+    <h3 class="recommendation-num-results-header">Number of tracks</h3>
+    <div>
+        <button class="decrease-num-tracks num-tracks-btn"> <img src="../imgs/left-arrow.svg" alt=""></button>
+        <input class="recommendation-num-results-input" type="number" min="0" max="100" value="50" style="width:40px; text-align: center;">
+        <button class="increase-num-tracks num-tracks-btn"> <img src="../imgs/right-arrow.svg" alt=""></button>
+    </div>
+</div>
 
  <div class="recommendation-features">
     <div class="selected-seeds">
         <div class="selected-seeds-type selected-seeds__tracks"></div>
         <div class="selected-seeds-type selected-seeds__artists"></div>
         <div class="selected-seeds-type selected-seeds__genres"></div>
-    </div>
+
+    
      <div class="recommendation-search-fields">
         <h3 class="recommendation-heading"> Required Search Fields</h3>
         <div class="recommendation-seeds">
@@ -85,6 +72,7 @@
      <form id="recommendation-form" action="/" method="POST">
 
         <input id="seedsInput" name="seeds" type="hidden">
+        <input id="numTracks" name="numTracks" type="hidden">
 
         <div class="recommend-input-section">
             <div class="audio-feature-section__basic">

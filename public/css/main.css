@@ -17,9 +17,31 @@
   align-items: center;
 }
 
+.recommendation-num-results-input {
+  color: transparent;
+  text-shadow: 0 0 0 black;
+}
+
+.recommendation-num-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.recommendation-num-results-header {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
 .results-heading {
   margin-bottom: 10px;
   margin: 0 auto;
+}
+
+.results-content {
+  max-height: 595px;
+  overflow-y: auto;
 }
 
 .results-hide {
@@ -182,6 +204,10 @@ h4, h3, h2, h1, h5, h6, p, input {
   padding: 0;
 }
 
+html {
+  position: relative;
+}
+
 html, body {
   margin: 0;
   height: 100%;
@@ -208,6 +234,65 @@ html, body {
   padding: 5px 10px;
   transform: rotate(45deg);
   font-size: 25px;
+}
+
+.refresh-token {
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #BF0DFF;
+}
+
+.num-tracks-btn {
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #BF0DFF;
+  text-align: center;
+}
+
+.num-tracks-btn img {
+  width: 10px;
+}
+
+.refresh_token_container {
+  background-color: #1F1F1F;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+.refresh-token-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.token-refresh-btn {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #FF007B;
+  text-align: center;
+}
+
+.refresh_token-title {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .fullScreenView {

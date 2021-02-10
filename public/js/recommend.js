@@ -65,34 +65,39 @@ async function fetchItem(q, type, outputDiv){
     }
 
     const res = await fetch(`/search?q=${q}&type=${type}`);
-    const json = await res.json();
-
-    outputDiv.innerHTML = '';
     
-    let div = document.createElement('div');
-    div.setAttribute('class','recommend-input-list-suggestions');
-    json.forEach( result => {
-        let innerDiv = document.createElement('div');
-        innerDiv.setAttribute('class','recommend-input-list-div');
-        artistP = document.createElement('p');
-        artistP.setAttribute('class', 'recommend-input-list-item recommend-input-list-item__name');
-        artistP.innerText = result.name;
-        innerDiv.appendChild(artistP);
 
-        if(type === 'track'){
-            trackP = document.createElement('p');
-            trackP.setAttribute('class', 'recommend-input-list-item recommend-input-list-item__artist');
-            trackP.innerText = ` (${result.artists.toString()})`;
-            innerDiv.appendChild(trackP);
-        }
-
-        div.appendChild(innerDiv);
-    });
-
-    resultSearch = json.slice();
-
-    outputDiv.appendChild(div);
-    artistEventListeners(type, outputDiv);
+    if (res.status === 200){
+        const json = await res.json();
+        outputDiv.innerHTML = '';
+        
+        let div = document.createElement('div');
+        div.setAttribute('class','recommend-input-list-suggestions');
+        json.forEach( result => {
+            let innerDiv = document.createElement('div');
+            innerDiv.setAttribute('class','recommend-input-list-div');
+            artistP = document.createElement('p');
+            artistP.setAttribute('class', 'recommend-input-list-item recommend-input-list-item__name');
+            artistP.innerText = result.name;
+            innerDiv.appendChild(artistP);
+    
+            if(type === 'track'){
+                trackP = document.createElement('p');
+                trackP.setAttribute('class', 'recommend-input-list-item recommend-input-list-item__artist');
+                trackP.innerText = ` (${result.artists.toString()})`;
+                innerDiv.appendChild(trackP);
+            }
+    
+            div.appendChild(innerDiv);
+        });
+    
+        resultSearch = json.slice();
+    
+        outputDiv.appendChild(div);
+        artistEventListeners(type, outputDiv);
+    } else {
+        promptTokenRefresh();
+    }
 }
 
 function artistEventListeners(type, outputDiv){
@@ -239,7 +244,7 @@ function removeSeed(name){
 const returnGenres = async () => {
     if(genres.length === 0){
         const genresBody = await fetch('/genres');
-        if(genresBody.status === 200 && genresBody !== "fail") {
+        if(genresBody.status === 200) {
             const genresJson = await genresBody.json();
             genres = genresJson;
 
@@ -268,12 +273,20 @@ const returnGenres = async () => {
 
 returnGenres();
 
+const genreInput = document.querySelector('#recommended-genre');
+
+genreInput.addEventListener('click', returnGenres);
+
 // Returns the search results
 submit.addEventListener('click', async e => {
     e.preventDefault();
     const seedsFormField = document.querySelector('#seedsInput');
     let seedsValue = JSON.stringify(seeds);
     seedsFormField.setAttribute('value', seedsValue);
+
+    const numTracksInput = document.querySelector('.recommendation-num-results-input');
+    const numTracks = document.querySelector('#numTracks');
+    numTracks.setAttribute('value', parseInt(numTracksInput.value));
 
     for(let type in seeds){
         let article = 'a'
@@ -288,20 +301,21 @@ submit.addEventListener('click', async e => {
     const recommendationForm = document.querySelector('#recommendation-form');
     const formData = new FormData( recommendationForm );
 
-    // for(let item of turd.entries()){
-    //     console.log(item);
-    // }
-
     const res = await fetch('/recommend',{
         method: 'post',
         body: formData,
     });
 
-    const response = await res.json();
-    displayResults(response);
+    if(res.status === 200){
+        const json = await res.json();
+        displayResults(json);
+    
+        uris = json.uris;
+        window.scrollTo(0,0);
+    } else {
+        promptTokenRefresh();
+    }
 
-    uris = response.uris;
-    window.scrollTo(0,0);
 });
 
 const resultsContentDiv = document.querySelector('.results-content');
@@ -340,7 +354,7 @@ const toggleMute = (mute, feature) => {
     // Change the entire content to grayed out
     feature.classList.toggle('feature-off');
     slider.classList.toggle('feature-off');
-}
+};
 
 
 // Add or remove the sliders from the recommender
@@ -350,7 +364,7 @@ for(let feature of featureSections){
     mute.addEventListener('click', e => {
         toggleMute(mute, feature);
     });
-}
+};
 
 // Advanced featues
 const advancedFaturesButton = document.querySelector('.audio-features-advanced');
@@ -380,4 +394,73 @@ advancedFaturesButton.addEventListener('click', e => {
     }
 });
 
+const increaseTracks = document.querySelector('.increase-num-tracks');
+const decreaseTracks = document.querySelector('.decrease-num-tracks');
+const numTracks = document.querySelector('.recommendation-num-results-input');
 
+increaseTracks.addEventListener('click', e => {
+    let nums = parseInt(numTracks.value);
+    if(nums >= 100) {
+        return
+    } else {
+        numTracks.value = nums+1;
+    }
+});
+
+decreaseTracks.addEventListener('click', e => {
+    let nums = parseInt(numTracks.value);
+    if(nums <= 0) {
+        return
+    } else {
+        numTracks.value = nums-1;
+    }
+});
+
+numTracks.addEventListener('keydown', e => {
+    e.preventDefault();
+});
+
+
+let timeout;
+let intervizzle;
+
+increaseTracks.addEventListener('mousedown', increaseTracksInterval);
+increaseTracks.addEventListener('touchstart', increaseTracksInterval);
+decreaseTracks.addEventListener('mousedown', decreaseTracksInterval);
+decreaseTracks.addEventListener('touchstart', decreaseTracksInterval);
+
+
+function increaseTracksInterval(){
+    timeout = setTimeout( function(){
+        intervizzle = setInterval(() => {
+            if(parseInt(numTracks.value) < 100){
+                numTracks.value = parseInt(numTracks.value) + 1;
+            }
+        },  60);
+    },500);
+}
+
+function decreaseTracksInterval(){
+    timeout = setTimeout( function(){
+        intervizzle = setInterval(() => {
+            if(parseInt(numTracks.value) > 0){
+                numTracks.value = parseInt(numTracks.value) - 1;
+            }
+        },  100);
+    },500);
+}
+
+increaseTracks.addEventListener('mouseup', clearTimers);
+increaseTracks.addEventListener('mouseleave',clearTimers);
+increaseTracks.addEventListener('touchend',clearTimers);
+increaseTracks.addEventListener('touchmove',clearTimers);
+decreaseTracks.addEventListener('mouseup', clearTimers);
+decreaseTracks.addEventListener('mouseleave',clearTimers); 
+decreaseTracks.addEventListener('touchend',clearTimers);  
+decreaseTracks.addEventListener('touchmove',clearTimers);  
+  
+
+function clearTimers() {
+    clearTimeout(timeout);
+    clearInterval(intervizzle);
+  }
