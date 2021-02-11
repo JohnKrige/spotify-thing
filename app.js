@@ -9,7 +9,12 @@ const app = express();
 const spotifyRoutes = require('./routes/spotify');
 
 // Mongoose connection settings
-mongoose.connect('mongodb://localhost/spotify', {useNewUrlParser: true, useUnifiedTopology: true});
+const uri = process.env.MONGODB_URI;
+// const uri = 'mongodb+srv://JK:kavhZasmc0FIYFb3@spotify-cluster.bwmfr.mongodb.net/spotify?retryWrites=true&w=majority'
+mongoose.connect(uri, {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+});
 
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());

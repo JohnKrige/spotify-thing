@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "app.js"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +24,8 @@
     "querystring": "^0.2.0",
     "randomstring": "^1.1.5",
     "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "14.12"
   }
 }
