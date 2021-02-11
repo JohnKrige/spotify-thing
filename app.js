@@ -40,6 +40,9 @@ app.use(session({
 app.use(spotifyRoutes);
 
 
-app.listen(3000, (req, res) => {
-    console.log('We are live!')
-})
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, (req,res) => {
+    console.log('And we are live')
+});
