@@ -20,6 +20,8 @@
 .recommendation-num-results-input {
   color: transparent;
   text-shadow: 0 0 0 black;
+  width: 30px;
+  text-align: center;
 }
 
 .recommendation-num-results {
@@ -78,17 +80,6 @@
 
 .results-details-track, .results-details-artist {
   margin: 5px 0;
-}
-
-.results-details {
-  width: 70%;
-}
-
-.results-play-sample, .results-options {
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .results-options {
@@ -214,17 +205,23 @@ html, body {
   margin-bottom: 20px;
 }
 
-.flash-message {
+.flash-message-content {
+  margin-top: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+.flash-message {
   position: absolute;
   background-color: #7979ff;
   color: white;
   font-weight: bold;
   top: 14%;
+  left: 50%;
   height: 80px;
   width: 320px;
+  transform: translate(-50%, -14%);
 }
 
 .flash-message .flash-message-close-button {

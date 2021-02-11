@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sliderStyles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Thingy Galore</title>
+</head>
+<body>
+
+
+    <header>
+        <div class="header">
+            <h1 class="logo">AppThang</h1> 
+            <%if (data.user) { %>
+            <div class="user-section">
+                <h2 class="user" ><%=data.user.display_name%></h2>
+                <div class="user-div">
+                    <p class="user-dropdown"> 
+                        <img class="user-dropdown-img" src="../imgs/down-arrow.svg" alt="">
+                    </p>
+                    <div class="user-dropdown-logout-div">
+                        <a href="/logout" class="user-dropdown-logout-select invisible">
+                            logout
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <% } %>
+        </div>
+    </header>
+  
+    <%- include('./help') %>
+
+    <%if (!data.user) { %>
+        <%- include('./home-login') %>
+    <% } else { %>
+        <%- include('./home-app') %>
+    <% } %>
+
+    <div class="flash-message invisible">
+        <p class="flash-message-text"> My man</p>
+        <p class="flash-message-close-button">+</p>
+    </div>
+
+    <div class="refresh-token invisible">
+        <div class="refresh_token_container">
+            <div class ="refresh-token-text">
+                <h3 class="refresh_token-title">Your spotify token expired</h3>
+                <p>Upon logging in with Spotify, they grant you 1 hour access via a token. When the token expires you have to request a new token and you get to play for another hour.</p>
+            </div>
+            <a class="token-refresh-btn" href="/refresh_token">Refresh Token</a>
+        </div>
+    </div>
+
+
+
+<script src="js/playlist.js"></script>
+<script src="js/displayResults.js"></script>
+<script src="js/recommend.js"></script>
+<script src="js/topArtists.js"></script>
+<script src="js/homeScreen.js"></script>
+</body>
+</html>

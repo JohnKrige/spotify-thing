@@ -367,16 +367,16 @@ for(let feature of featureSections){
 };
 
 // Advanced featues
-const advancedFaturesButton = document.querySelector('.audio-features-advanced');
+const advancedFaturesButton = document.querySelector('.audio-features-advanced'); 
+
 advancedFaturesButton.addEventListener('click', e => {
-    console.log('clicked me');
     const advancedFeatures = document.querySelectorAll('.advanced-feature');
 
     for(let feature of advancedFeatures){
         // Hides the feature
         feature.classList.toggle('invisible');
 
-        // Resets the feature the a grayed out feature that's not taken into account when submitted
+        // "Turn off (resets to grayed out and disable) the advanced features when pressed. Either way you get a clean slate"
         featureSection = feature.querySelector('.audio-feature-section');
         let featureOff = feature.getAttribute('class').split(' ').includes('invisible');
         if(!featureOff){
@@ -392,7 +392,21 @@ advancedFaturesButton.addEventListener('click', e => {
     for(let heading of headings){
         heading.classList.toggle('invisible');
     }
+
+    changeAdvancedFeaturesButtonName();
 });
+
+let advancedFeaturesOpen = false;
+
+const changeAdvancedFeaturesButtonName = () => {
+    advancedFeaturesOpen = !advancedFeaturesOpen;
+    if(advancedFeaturesOpen){
+        advancedFaturesButton.innerText = 'Basic Features'
+    } else {
+        advancedFaturesButton.innerText = 'Advanced Features'
+    }
+
+}
 
 const increaseTracks = document.querySelector('.increase-num-tracks');
 const decreaseTracks = document.querySelector('.decrease-num-tracks');
@@ -409,7 +423,7 @@ increaseTracks.addEventListener('click', e => {
 
 decreaseTracks.addEventListener('click', e => {
     let nums = parseInt(numTracks.value);
-    if(nums <= 0) {
+    if(nums <= 1) {
         return
     } else {
         numTracks.value = nums-1;

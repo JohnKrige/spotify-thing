@@ -18,17 +18,23 @@ html,body{
     margin-bottom: 20px;
 }
 
-.flash-message{
-    display:flex;
-    align-items: center;
+.flash-message-content{
+    margin-top: 10px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.flash-message{
     position: absolute;
     background-color: rgb(121, 121, 255);
     color: white;
     font-weight: bold;
     top: 14%;
+    left: 50%;
     height: 80px;
     width: 320px;
+    transform: translate(-50%, -14%);
 
     .flash-message-close-button{
         position: absolute;

@@ -31,9 +31,12 @@ closeFlash.addEventListener('click', e => {
 const userDropdown = document.querySelector('.user-dropdown-img');
 const logout = document.querySelector('.user-dropdown-logout-select');
 
+let dropDownOpen = false;
+
 userDropdown.addEventListener('click', e => {
     logout.classList.toggle('invisible');
-
+    toggleMenuImage();
+    dropDownOpen = !dropDownOpen;
     window.addEventListener('click', hideMenu);
 });
 
@@ -42,6 +45,15 @@ const hideMenu = (e) => {
         logout.classList.add('invisible');
         window.removeEventListener('click',hideMenu);
     };
+}
+
+const toggleMenuImage = () => {
+    let img = document.querySelector('.user-dropdown-img');
+    if(dropDownOpen){
+        img.setAttribute('src','../imgs/down-arrow.svg');
+    } else {
+        img.setAttribute('src','../imgs/up-arrow.svg');
+    }
 }
 
 const flashText = document.querySelector('.flash-message-text');
@@ -63,7 +75,7 @@ const removeFlashMessage = () => {
     5000);
 }
 
-let polarity = 'off'
+// let polarity = 'off'
 
 const helpButton = document.querySelector('.recommendation-help');
 const help = document.querySelector('.help');

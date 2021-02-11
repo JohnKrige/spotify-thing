@@ -82,17 +82,6 @@
   margin: 5px 0;
 }
 
-.results-details {
-  width: 70%;
-}
-
-.results-play-sample, .results-options {
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
 .results-options {
   position: relative;
 }
