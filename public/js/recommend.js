@@ -37,7 +37,7 @@ const inputListener = (inputElement, type, outPutDiv) => {
 }
 
 const touchListener = (inputElement, type, outPutDiv) => {
-    inputElement.addEventListener('touchstart', e => {
+    inputElement.addEventListener('input', e => {
         manageInput(e, inputElement, type, outPutDiv);
     });
 }
@@ -48,19 +48,18 @@ touchListener(artistInput, 'artist',artistSearchResult);
 touchListener(trackInput, 'track', tracksSearchResult);
 
 const manageInput = (e, input, type, div) => {
-    if (
-        (e.which <= 90 && e.which >= 48) // Alphanumeric
-        || (e.which >= 96 && e.which <= 105) // Numpad
-        || e.which === 32 // spacebar
-        || e.which === 8 // backspace
-        || e.which === 13 // Enter
-       )
-    {
-      clearTimeout(inputTimeOut);
-
-
-      inputTimeOut = setTimeout(fetchItem, 800, input.value, type, div);
-    }
+    // if (
+    //     (e.which <= 90 && e.which >= 48) // Alphanumeric
+    //     || (e.which >= 96 && e.which <= 105) // Numpad
+    //     || e.which === 32 // spacebar
+    //     || e.which === 8 // backspace
+    //     || e.which === 13 // Enter
+    //    )
+    // {
+    //}
+    clearTimeout(inputTimeOut);
+    inputTimeOut = setTimeout(fetchItem, 800, input.value, type, div);
+    
 }
 
 async function fetchItem(q, type, outputDiv){
