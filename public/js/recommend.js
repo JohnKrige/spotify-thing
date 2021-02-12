@@ -37,7 +37,7 @@ const inputListener = (inputElement, type, outPutDiv) => {
 }
 
 const touchListener = (inputElement, type, outPutDiv) => {
-    inputElement.addEventListener('input', e => {
+    inputElement.addEventListener('touchstart', e => {
         manageInput(e, inputElement, type, outPutDiv);
     });
 }
