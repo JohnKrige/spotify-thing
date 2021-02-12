@@ -19,7 +19,7 @@ const router = express.Router();
 
 const client_id = '774f74e3029946fe9f5c9ee7a1ee5f3d'; // Your client id
 const client_secret = '352f29ce4cd6414cada4e6afd267675b'; // Your secret
-const redirect_uri = 'https://snakeballs.herokuapp.com/'; // Your redirect uri
+const redirect_uri = 'https://snakeballs.herokuapp.com/callback'; // Your redirect uri
 
 router.get('/', topListens(5, 'short'), (req, res) => {
   // Check if the spotify token has to be refreshed. Middleware this? 
@@ -42,14 +42,13 @@ const stateKey = 'spotify_auth_state';
 router.get('/login', function(req, res) {
   let state = randomstring.generate(16);
   res.cookie(stateKey, state);
-  // your application requests authorization
-  // Scopes - user top read: Most played artists and tracks
+
   const scope = 'user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private'; 
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
       client_id: client_id,
-      scope: scope, // need to up the scope for this project. Get to it son
+      scope: scope, 
       redirect_uri: redirect_uri,
       state: state // This is included for security purposes. The docs recommend this. 
     })
@@ -63,7 +62,7 @@ router.get('/callback', (req, res) => {
 
     // This checks the state returned by the spotify webapi to the stored state we created. If it matched, great, else redirect to home.
     if (state === null || state !== storedState) {
-        res.redirect('/login' +
+        res.redirect('/' +
           querystring.stringify({
             error: 'state_mismatch'
           }));
