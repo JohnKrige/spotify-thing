@@ -31,7 +31,7 @@ let genres = [];
  
 // Only takes track or artist - since that spotify call is different for genres.
 const inputListener = (inputElement, type, outPutDiv) => {
-    inputElement.addEventListener('keyup', e => {
+    inputElement.addEventListener('keyup input', e => {
         manageInput(e, inputElement, type, outPutDiv);
     });
 }
