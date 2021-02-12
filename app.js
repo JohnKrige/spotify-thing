@@ -40,6 +40,8 @@ app.use(session({
 app.use(spotifyRoutes);
 
 let port = process.env.PORT;
+
+
 if (port == null || port == "") {
   port = 3000;
 }
