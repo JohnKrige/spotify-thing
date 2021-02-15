@@ -46,6 +46,12 @@
   overflow-y: auto;
 }
 
+.result-not-found {
+  text-align: center;
+  color: #FF007B;
+  margin: 20px 0;
+}
+
 .results-hide {
   font-weight: 700;
   padding: 3px 5px;

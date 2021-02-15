@@ -1,20 +1,22 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
 const resultsContent = document.querySelector('.results-content');
 const results = document.querySelector('.results');
 
-let tracksObj = {};
+const tracksObj = {};
 
 // Function that displays the recommendation results to the dom
-// response json obj fetched via the recommend.js file. 
-const displayResults = (response) => {
-    resultsContent.innerHTML = '';
-    results.classList.remove('invisible');
-    results.classList.add('visible');
-    response.tracksProcessed.forEach( (track,i) => {
-        tracksObj[i] = track;
-        let div = document.createElement('div');
-        div.setAttribute('class', `results-display-section display-section${i}`);
+// response json obj fetched via the recommend.js file.
+const displayResults = response => {
+  resultsContent.innerHTML = '';
+  results.classList.remove('invisible');
+  results.classList.add('visible');
+  response.tracksProcessed.forEach((track, i) => {
+    tracksObj[i] = track;
+    const div = document.createElement('div');
+    div.setAttribute('class', `results-display-section display-section${i}`);
 
-        div.innerHTML = `
+    div.innerHTML = `
         <div class="results-details">
             <div class="results-details-track">
                 <p class="results-track-name">Track name:<p> 
@@ -25,9 +27,9 @@ const displayResults = (response) => {
                 <p> ${track.artists.toString()} </p>
             </div>
         </div>
-       `
+       `;
 
-    // This is a play button and dropdown for each song, originally added to the display section above. 
+    // This is a play button and dropdown for each song, originally added to the display section above.
     // <div class="results-play-sample">
     //     <img class="recommend-btn" src="../imgs/play-button.svg" alt="play sample button" track="${i}">
     // </div>
@@ -42,44 +44,51 @@ const displayResults = (response) => {
     //     </div>
 
     resultsContent.appendChild(div);
+  });
 
-    });
+  // playButtonListeners();
+  // menuButtonListeners();
+};
 
-    playButtonListeners();
-    menuButtonListeners();
-}
+const noResultsDisplay = () => {
+  resultsContent.innerHTML = '';
+  results.classList.remove('invisible');
+  results.classList.add('visible');
+  const p = document.createElement('p');
+  p.setAttribute('class', 'result-not-found');
+  p.innerText = 'No results found';
+  resultsContent.appendChild(p);
+  window.scrollTo(0, 0);
+};
 
-
-
-//Event listener for playback sound
+// Event listener for playback sound
 const playButtonListeners = () => {
-    playButtons = document.querySelectorAll('.recommend-play-sample-btn');
-    playButtons.forEach( button => {
-        button.addEventListener('click', e => {
-            console.log(tracksObj);
-            let track = button.getAttribute('track');
-            let sample = tracksObj[track].preview_url;
-            playSound(sample);
-        })
+  const playButtons = document.querySelectorAll('.recommend-play-sample-btn');
+  playButtons.forEach(button => {
+    button.addEventListener('click', e => {
+      const track = button.getAttribute('track');
+      const sample = tracksObj[track].preview_url;
+      playSound(sample);
     });
-}
+  });
+};
 
 function playSound(url) {
-    var a = new Audio(url);
-    a.play();
+  const a = new Audio(url);
+  a.play();
 }
 
 // Open and close track options menu
 const menuButtonListeners = () => {
-    const trackOptions = document.querySelectorAll('.results-options');
-    trackOptions.forEach( option => {
-        let dropDown = option.querySelector('.song-dropdown-options');
-        let dropDownBtn = option.querySelector('.recommend-track-options');
-        dropDownBtn.addEventListener('click', e => {
-            dropDown.classList.toggle('invisible');
-        });
+  const trackOptions = document.querySelectorAll('.results-options');
+  trackOptions.forEach(option => {
+    const dropDown = option.querySelector('.song-dropdown-options');
+    const dropDownBtn = option.querySelector('.recommend-track-options');
+    dropDownBtn.addEventListener('click', e => {
+      dropDown.classList.toggle('invisible');
     });
-}
+  });
+};
 
 menuButtonListeners();
 
@@ -88,11 +97,8 @@ const addToPlaylistButton = document.querySelector('.add-to-playlist');
 const playlist = document.querySelector('.playlist-container');
 const body = document.querySelector('body');
 addToPlaylistButton.addEventListener('click', e => {
-    returnPlaylists();
-    playListToggle('turnOn');
+  // eslint-disable-next-line no-undef
+  returnPlaylists();
+  // eslint-disable-next-line no-undef
+  playListToggle('turnOn');
 });
-
-
-
-
-

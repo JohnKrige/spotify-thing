@@ -1,41 +1,39 @@
-let helper = {}
+const helper = {};
 
-helper.getTrackData = (tracksArr)=> {
-    topTracks = []
-    tracksArr.forEach(item => {
-        track = {};
-        track.artists = [];
-        track.name = item.name;
-        track.album = item.album.name;
-        item.artists.forEach(artist => {
-            track.artists.push(artist.name);
-        });
-
-        topTracks.push(track);
+helper.getTrackData = tracksArr => {
+  const topTracks = [];
+  tracksArr.forEach(item => {
+    const track = {};
+    track.artists = [];
+    track.name = item.name;
+    track.album = item.album.name;
+    item.artists.forEach(artist => {
+      track.artists.push(artist.name);
     });
 
-    return topTracks;
-}
+    topTracks.push(track);
+  });
 
-helper.getArtistData = (arr, type='default')=>{
-    topResults = []
-    arr.forEach(item => {
-        result = {};
-        result.name = item.name;
-        result.images = item.images;
-        result.id = item.id;
-        
+  return topTracks;
+};
 
-        if(type==='track'){
-            result.artists = []
-            item.artists.forEach(ar => {
-                result.artists.push(ar.name);
-            })
-        }
-        topResults.push(result);
-    });
-    return topResults;
-}
+helper.getArtistData = (arr, type = 'default') => {
+  const topResults = [];
+  arr.forEach(item => {
+    const result = {};
+    result.name = item.name;
+    result.images = item.images;
+    result.id = item.id;
+    if (type === 'track') {
+      result.artists = [];
+      item.artists.forEach(ar => {
+        result.artists.push(ar.name);
+      });
+    }
+    topResults.push(result);
+  });
+  return topResults;
+};
 
 helper.audioFeatureScales = {
   target_acousticness: 100,
@@ -69,40 +67,42 @@ helper.audioFeatureScales = {
   target_valence: 100,
   min_valence: 100,
   max_valence: 100,
-}
+};
 
-helper.produceSeedArray = (obj) => {
+helper.produceSeedArray = obj => {
   const seedsObj = {};
   seedsObj.artist = [];
   seedsObj.track = [];
   seedsObj.genre = [];
-  for(let type in obj){
-    if(type === 'genre'){
+  // eslint-disable-next-line prefer-const
+  for (let type in obj) {
+    if (type === 'genre') {
       seedsObj.genre = obj.genre;
     } else {
-      for(let item of obj[type]){
-        seedsObj[type].push(item.id)
+      // eslint-disable-next-line prefer-const
+      for (let item of obj[type]) {
+        seedsObj[type].push(item.id);
       }
     }
   }
   return seedsObj;
-}
+};
 
-helper.getDesiredInfo = (tracks) => {
-  result = {}
-  result.tracksProcessed = []
-  result.uris = []
+helper.getDesiredInfo = tracks => {
+  const result = {};
+  result.tracksProcessed = [];
+  result.uris = [];
   tracks.forEach(track => {
-    const trackObj = {}
+    const trackObj = {};
     trackObj.name = track.name;
     trackObj.external_urls = track.external_urls;
     trackObj.href = track.href;
-    trackObj.id= track.id;
+    trackObj.id = track.id;
     trackObj.preview_url = track.preview_url;
     trackObj.uri = track.uri;
-    trackObj.artists = []
+    trackObj.artists = [];
 
-    track.artists.forEach( artist => {
+    track.artists.forEach(artist => {
       trackObj.artists.push(artist.name);
     });
 
@@ -111,6 +111,6 @@ helper.getDesiredInfo = (tracks) => {
   });
 
   return result;
-}
+};
 
 module.exports = helper;

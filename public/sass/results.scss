@@ -49,6 +49,12 @@
     overflow-y: auto;
 }
 
+.result-not-found{
+    text-align: center;
+    color: $primary-color;
+    margin: 20px 0;
+}
+
 .results-hide{
     @include colorButtonSmall($accent-color);
     
@@ -79,18 +85,6 @@
 .results-details-track, .results-details-artist{
     margin: 5px 0;
 }
-
-// .results-details{
-//     width: 70%;
-// }
-
-
-// .results-play-sample,  .results-options{
-//     width: 10%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: flex-start;
-// }
 
 .results-options{
     position: relative;
