@@ -21,8 +21,8 @@ const router = express.Router();
 
 const client_id = '774f74e3029946fe9f5c9ee7a1ee5f3d'; // Your client id
 const clientSecret = '352f29ce4cd6414cada4e6afd267675b'; // Your secret
-const redirect_uri = 'http://localhost:3000/callback';
-// const redirect_uri = 'https://snakeballs.herokuapp.com/callback'; // Your redirect uri
+// const redirect_uri = 'http://localhost:3000/callback';
+const redirect_uri = 'https://snakeballs.herokuapp.com/callback'; // Your redirect uri
 
 router.get('/', topListens(5, 'short'), (req, res) => {
   // Check if the spotify token has to be refreshed. Middleware this?

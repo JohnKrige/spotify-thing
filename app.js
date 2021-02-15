@@ -10,8 +10,8 @@ const app = express();
 const spotifyRoutes = require('./routes/spotify');
 
 // Mongoose connection settings
-// const uri = process.env.MONGODB_URI;
-const uri = 'mongodb://localhost/spotify';
+const uri = process.env.MONGODB_URI;
+// const uri = 'mongodb://localhost/spotify';
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
