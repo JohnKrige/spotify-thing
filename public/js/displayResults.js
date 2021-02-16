@@ -7,8 +7,9 @@ const tracksObj = {};
 
 // Function that displays the recommendation results to the dom
 // response json obj fetched via the recommend.js file.
-flashMessage('Tracks can be added to playlist. Just click "Add all to playlist"');
 const displayResults = response => {
+  // eslint-disable-next-line no-undef
+  flashMessage('Tracks can be added to playlist. Just click "Add all to playlist"');
   resultsContent.innerHTML = '';
   results.classList.remove('invisible');
   results.classList.add('visible');

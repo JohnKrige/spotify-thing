@@ -6,7 +6,7 @@
 }
 
 .results-border {
-  border: 2px solid #BF0DFF;
+  border: 2px solid #c831ff;
   border-radius: 5px;
   padding: 10px;
 }
@@ -48,7 +48,7 @@
 
 .result-not-found {
   text-align: center;
-  color: #FF007B;
+  color: #ff409c;
   margin: 20px 0;
 }
 
@@ -57,7 +57,7 @@
   padding: 3px 5px;
   border-radius: 5px;
   border: none;
-  background-color: #BF0DFF;
+  background-color: #c831ff;
   text-align: center;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .results-track-name, .results-artist-name {
-  color: #BF0DFF;
+  color: #c831ff;
   font-weight: 700;
 }
 
@@ -122,7 +122,7 @@
   padding: 3px 5px;
   border-radius: 5px;
   border: none;
-  background-color: #FF007B;
+  background-color: #ff409c;
   text-align: center;
 }
 
@@ -131,7 +131,7 @@
   padding: 3px 5px;
   border-radius: 5px;
   border: none;
-  background-color: #BF0DFF;
+  background-color: #c831ff;
   text-align: center;
 }
 /*# sourceMappingURL=results.css.map */

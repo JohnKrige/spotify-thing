@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sliderStyles.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>Thingy Galore</title>
+    <title>Playlist Shaman</title>
 </head>
 <body>
 
 <header>  
 <div class="header">
-    <h1 class="logo">Playlist Shamen</h1> 
+    <h1 class="logo">Playlist Shaman</h1> 
     <%if (data.user) { %>
     <div class="user-section">
         <h2 class="user" ><%=data.user.display_name%></h2>
@@ -58,10 +58,11 @@
 <%- include('./home-app') %>
 <% } %>
 
+<script src="js/homeScreen.js"></script>
 <script src="js/playlist.js"></script>
 <script src="js/displayResults.js"></script>
 <script src="js/recommend.js"></script>
 <script src="js/topArtists.js"></script>
-<script src="js/homeScreen.js"></script>
+
 </body>
 </html>
