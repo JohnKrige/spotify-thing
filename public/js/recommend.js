@@ -268,8 +268,7 @@ const returnGenres = async () => {
         displaySeeds();
       });
     } else {
-      // If genres arent returned then clearly the token expired.
-      // promptTokenRefresh();
+      promptTokenRefresh();
     }
   }
 };
@@ -317,8 +316,12 @@ submit.addEventListener('click', async e => {
     uris = json.uris;
     window.scrollTo(0, 0);
   } else {
+    if (res.status === 404) {
+      promptTokenRefresh();
+      return;
+    }
     noResultsDisplay();
-    // Does not necessarily result from token. Searches may be too niche. On backend, use error to determine what response it appropriate.
+    flashMessage('No results found');
   }
 });
 

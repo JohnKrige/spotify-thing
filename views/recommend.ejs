@@ -1,108 +1,95 @@
-<div class="recommendation-header">
-    <h3 class="recommendation-header-title">Search Recommendations</h3>
-    <p class="recommendation-help">?</p>
- </div>
+<div class="recommendation-search-display">
 
- <div class="results invisible">
-     <div class="results-border">
+    <div class="div-69">
+        <div class="recommendation-header">
+            <h3 class="recommendation-header-title">Search Recommendations</h3>
+            <p class="recommendation-help">?</p>
+        </div>
+    </div>
+    
+    <div class="results invisible">
+        <div class="results-border">
         <div class="results-header">
             <h3 class="results-heading">Your Results</h3>
             <button class="results-hide">
                 <img class="results-hide-btn" src="../imgs/up-arrow.svg" alt="hide results">
             </button>
-         </div>
+            </div>
         <div class="results-content"></div>
-     </div>
-
-     <div class="result-buttons">
-         <a class="new-result-search result-button" href="/"> New Search</a>
-         <p class="add-to-playlist result-button">Add all to playlist</p>
-     </div>
-</div>
-
-
-
-<div class="recommendation-num-results">
-    <h3 class="recommendation-num-results-header">Number of tracks</h3>
-    <div>
-        <button class="decrease-num-tracks num-tracks-btn"> <img src="../imgs/left-arrow.svg" alt=""></button>
-        <input class="recommendation-num-results-input" type="number" min="0" max="100" value="50" style="width:40px; text-align: center;">
-        <button class="increase-num-tracks num-tracks-btn"> <img src="../imgs/right-arrow.svg" alt=""></button>
-    </div>
-</div>
-
- <div class="recommendation-features">
-    <div class="selected-seeds">
-        <div class="selected-seeds-type selected-seeds__tracks"></div>
-        <div class="selected-seeds-type selected-seeds__artists"></div>
-        <div class="selected-seeds-type selected-seeds__genres"></div>
-
+        </div>
     
-     <div class="recommendation-search-fields">
-        <h3 class="recommendation-heading"> Required Search Fields</h3>
-        <div class="recommendation-seeds">
-            <div class="seed-div">
-                <label for="recommend-artist">Add Artist</label>
-                <div>
-                    <input class="recommend-input" id="recommend-artist" name="artist" type="search" autocomplete="off">
-                    <div class="search-suggestions artists-search-result" ></div>
-                </div>
+        <div class="result-buttons">
+            <a class="new-result-search result-button" href="/"> New Search</a>
+            <p class="add-to-playlist result-button">Add all to playlist</p>
+        </div>
+    </div>
 
-            </div>
-            <div class="seed-div">
-                <label for="recommend-track">Add Track</label>
-                <div>
-                    <input class="recommend-input" id="recommend-track" name="track" type="search" autocomplete="off">
-                    <div class="search-suggestions tracks-search-result" ></div>
-                </div>
-            </div>
-            <div class="recommend-genre-div">
+
+
+    <div class="recommendation-num-results">
+        <h3 class="recommendation-num-results-header">Number of tracks</h3>
+        <div>
+            <button class="decrease-num-tracks num-tracks-btn"> <img src="../imgs/left-arrow.svg" alt=""></button>
+            <input class="recommendation-num-results-input" type="number" min="0" max="100" value="50" style="width:40px; text-align: center;">
+            <button class="increase-num-tracks num-tracks-btn"> <img src="../imgs/right-arrow.svg" alt=""></button>
+        </div>
+    </div>
+    
+     <div class="recommendation-features">
+        <div class="selected-seeds">
+            <div class="selected-seeds-type selected-seeds__tracks"></div>
+            <div class="selected-seeds-type selected-seeds__artists"></div>
+            <div class="selected-seeds-type selected-seeds__genres"></div>
+    
+        
+         <div class="recommendation-search-fields">
+            <h3 class="recommendation-heading"> Required Search Fields</h3>
+            <div class="recommendation-seeds">
                 <div class="seed-div">
-                    <label for="recommend-genre">Add Genre</label>
-                    <select class="recommend-input" class="" name="genre" id="recommended-genre"></select>
+                    <label for="recommend-artist">Add Artist</label>
+                    <div>
+                        <input class="recommend-input" id="recommend-artist" name="artist" type="search" autocomplete="off">
+                        <div class="search-suggestions artists-search-result" ></div>
+                    </div>
+    
+                </div>
+                <div class="seed-div">
+                    <label for="recommend-track">Add Track</label>
+                    <div>
+                        <input class="recommend-input" id="recommend-track" name="track" type="search" autocomplete="off">
+                        <div class="search-suggestions tracks-search-result" ></div>
+                    </div>
+                </div>
+                <div class="recommend-genre-div">
+                    <div class="seed-div">
+                        <label for="recommend-genre">Add Genre</label>
+                        <select class="recommend-input" class="" name="genre" id="recommended-genre"></select>
+                    </div>
                 </div>
             </div>
-        </div>
-     </div>
-
-     <div class="audio-features">
-        <h3 class="recommendation-heading">Audio Features</h3>
-     </div>
-
-     <form id="recommendation-form" action="/" method="POST">
-
-        <input id="seedsInput" name="seeds" type="hidden">
-        <input id="numTracks" name="numTracks" type="hidden">
-
-        <div class="recommend-input-section">
-            <div class="audio-feature-section__basic">
-
-                <h4 class="feature-section-title invisible">Energy</h4>
-                <div class="audio-feature-section feature-off">
-                    <div class="audio-feature-section-left">
-                        <div class="audio-feature-section-label">
-                            <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
-                            <label for="target_energy">Target Energy</label>
-                            <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
-                        </div>
-                        <input class="audio-feature-slider feature-off" type="range" id="target_energy" min="0", max="100" name="target_energy" disabled>
-                    </div>
-                    <div class="audio-feature-section-right">
-                        <div class="audio-feature-mute-div">
-                            <img class="feature-tick" src="../imgs/cancel.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="advanced-feature invisible">
+         </div>
+    
+         <div class="audio-features">
+            <h3 class="recommendation-heading">Audio Features</h3>
+         </div>
+    
+         <form id="recommendation-form" action="/" method="POST">
+    
+            <input id="seedsInput" name="seeds" type="hidden">
+            <input id="numTracks" name="numTracks" type="hidden">
+    
+            <div class="recommend-input-section">
+                <div class="audio-feature-section__basic">
+    
+                    <h4 class="feature-section-title invisible">Energy</h4>
                     <div class="audio-feature-section feature-off">
                         <div class="audio-feature-section-left">
                             <div class="audio-feature-section-label">
                                 <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
-                                <label for="min_energy">Minimum Energy</label>
+                                <label for="target_energy">Target Energy</label>
                                 <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="min_energy" min="0", max="100" name="min_energy" disabled>
+                            <input class="audio-feature-slider feature-off" type="range" id="target_energy" min="0", max="100" name="target_energy" disabled>
                         </div>
                         <div class="audio-feature-section-right">
                             <div class="audio-feature-mute-div">
@@ -110,108 +97,108 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="advanced-feature invisible">
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
+                                    <label for="min_energy">Minimum Energy</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="min_energy" min="0", max="100" name="min_energy" disabled>
+                            </div>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
+                                    <label for="max_energy">Max Energy</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="max_energy" min="0", max="100" name="max_energy" disabled>
+                            </div>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <h4 class="feature-section-title invisible">Danceability</h4>
                     <div class="audio-feature-section feature-off">
                         <div class="audio-feature-section-left">
                             <div class="audio-feature-section-label">
                                 <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
-                                <label for="max_energy">Max Energy</label>
+                                <label class="audio-feature-label" for="danceability">Target Danceability</label>
                                 <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="max_energy" min="0", max="100" name="max_energy" disabled>
+                            <input class="audio-feature-slider feature-off" type="range" id="danceability" min="0", max="100" name="target_danceability" disabled>
                         </div>
                         <div class="audio-feature-section-right">
                             <div class="audio-feature-mute-div">
                                 <img class="feature-tick" src="../imgs/cancel.svg" alt="">
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <h4 class="feature-section-title invisible">Danceability</h4>
-                <div class="audio-feature-section feature-off">
-                    <div class="audio-feature-section-left">
-                        <div class="audio-feature-section-label">
-                            <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
-                            <label class="audio-feature-label" for="danceability">Target Danceability</label>
-                            <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
-                        </div>
-                        <input class="audio-feature-slider feature-off" type="range" id="danceability" min="0", max="100" name="target_danceability" disabled>
-                    </div>
-                    <div class="audio-feature-section-right">
-                        <div class="audio-feature-mute-div">
-                            <img class="feature-tick" src="../imgs/cancel.svg" alt="">
-                        </div>
-                    </div>
-                </div>    
-
-                <div class="advanced-feature invisible">
-                    <div class="audio-feature-section feature-off">
-                        <div class="audio-feature-section-left">
-                            <div class="audio-feature-section-label">
-                                <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
-                                <label for="min_danceability">Min Danceability</label>
-                                <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
+                    </div>    
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
+                                    <label for="min_danceability">Min Danceability</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="min_danceability" min="0", max="100" name="min_danceability" disabled>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="min_danceability" min="0", max="100" name="min_danceability" disabled>
-                        </div>
-                        <div class="audio-feature-section-right">
-                            <div class="audio-feature-mute-div">
-                                <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="advanced-feature invisible">
-                    <div class="audio-feature-section feature-off">
-                        <div class="audio-feature-section-left">
-                            <div class="audio-feature-section-label">
-                                <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
-                                <label for="max_danceability">Max Danceability</label>
-                                <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
+    
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower"> 0%</p>
+                                    <label for="max_danceability">Max Danceability</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper"> 100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="max_danceability" min="0", max="100" name="max_danceability" disabled>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="max_danceability" min="0", max="100" name="max_danceability" disabled>
-                        </div>
-                        <div class="audio-feature-section-right">
-                            <div class="audio-feature-mute-div">
-                                <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <h4 class="feature-section-title invisible">Tempo</h4>
-                <div class="audio-feature-section feature-off">
-                    <div class="audio-feature-section-left">
-                        <div class="audio-feature-section-label">
-                            <p class="audio-feature-limit  audio-feature-limit__lower"> 40 bpm</p>
-                            <label class="audio-feature-label" for="target_tempo">Target Tempo</label>
-                            <p class="audio-feature-limit  audio-feature-limit__upper"> 400 bpm</p>
-                        </div>
-                        <input class="audio-feature-slider feature-off" type="range" id="target_tempo" min="40", max="400" name="target_tempo" disabled>
-                    </div>
-                    <div class="audio-feature-section-right">
-                        <div class="audio-feature-mute-div">
-                            <img class="feature-tick" src="../imgs/cancel.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="advanced-feature invisible">
+    
+    
+                    <h4 class="feature-section-title invisible">Tempo</h4>
                     <div class="audio-feature-section feature-off">
                         <div class="audio-feature-section-left">
                             <div class="audio-feature-section-label">
                                 <p class="audio-feature-limit  audio-feature-limit__lower"> 40 bpm</p>
-                                <label class="audio-feature-label" for="min_tempo">Min Tempo</label>
+                                <label class="audio-feature-label" for="target_tempo">Target Tempo</label>
                                 <p class="audio-feature-limit  audio-feature-limit__upper"> 400 bpm</p>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="min_tempo" min="40", max="400" name="min_tempo" disabled>
+                            <input class="audio-feature-slider feature-off" type="range" id="target_tempo" min="40", max="400" name="target_tempo" disabled>
                         </div>
                         <div class="audio-feature-section-right">
                             <div class="audio-feature-mute-div">
@@ -219,72 +206,53 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="advanced-feature invisible">
-                    <div class="audio-feature-section feature-off">
-                        <div class="audio-feature-section-left">
-                            <div class="audio-feature-section-label">
-                                <p class="audio-feature-limit  audio-feature-limit__lower"> 40 bpm</p>
-                                <label class="audio-feature-label" for="max_tempo">Max Tempo</label>
-                                <p class="audio-feature-limit  audio-feature-limit__upper"> 400 bpm</p>
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower"> 40 bpm</p>
+                                    <label class="audio-feature-label" for="min_tempo">Min Tempo</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper"> 400 bpm</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="min_tempo" min="40", max="400" name="min_tempo" disabled>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="max_tempo" min="40", max="400" name="max_tempo" disabled>
-                        </div>
-                        <div class="audio-feature-section-right">
-                            <div class="audio-feature-mute-div">
-                                <img class="feature-tick" src="../imgs/cancel.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <h4 class="feature-section-title invisible">Positivity</h4>
-                <div class="audio-feature-section feature-off">
-                    <div class="audio-feature-section-left">
-                        <div class="audio-feature-section-label">
-                            <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
-                            <label class="audio-feature-label" for="target_positivity">Target Positivity</label>
-                            <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
-                        </div>
-                        <input class="audio-feature-slider feature-off" type="range" id="target_positivity" min="40", max="400" name="target_positivity" disabled>
-                    </div>
-                    <div class="audio-feature-section-right">
-                        <div class="audio-feature-mute-div">
-                            <img class="feature-tick" src="../imgs/cancel.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="advanced-feature invisible">
-                    <div class="audio-feature-section feature-off">
-                        <div class="audio-feature-section-left">
-                            <div class="audio-feature-section-label">
-                                <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
-                                <label class="audio-feature-label" for="min_positivity">Min Positivity</label>
-                                <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
-                            </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="min_positivity" min="40", max="400" name="min_positivity" disabled>
-                        </div>
-                        <div class="audio-feature-section-right">
-                            <div class="audio-feature-mute-div">
-                                <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="advanced-feature invisible">
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower"> 40 bpm</p>
+                                    <label class="audio-feature-label" for="max_tempo">Max Tempo</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper"> 400 bpm</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="max_tempo" min="40", max="400" name="max_tempo" disabled>
+                            </div>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <h4 class="feature-section-title invisible">Positivity</h4>
                     <div class="audio-feature-section feature-off">
                         <div class="audio-feature-section-left">
                             <div class="audio-feature-section-label">
                                 <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
-                                <label class="audio-feature-label" for="max_positivity">Max Positivity</label>
+                                <label class="audio-feature-label" for="target_positivity">Target Positivity</label>
                                 <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="max_positivity" min="40", max="400" name="max_positivity" disabled>
+                            <input class="audio-feature-slider feature-off" type="range" id="target_positivity" min="40", max="400" name="target_positivity" disabled>
                         </div>
                         <div class="audio-feature-section-right">
                             <div class="audio-feature-mute-div">
@@ -292,34 +260,53 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <h4 class="feature-section-title invisible">Acousticness</h4>
-                <div class="audio-feature-section feature-off">
-                    <div class="audio-feature-section-left">
-                        <div class="audio-feature-section-label">
-                            <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
-                            <label class="audio-feature-label" for="target_acousticness">Target Acousticness</label>
-                            <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
+                                    <label class="audio-feature-label" for="min_positivity">Min Positivity</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="min_positivity" min="40", max="400" name="min_positivity" disabled>
+                            </div>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <input class="audio-feature-slider feature-off" type="range" id="target_acousticness" min="40", max="400" name="target_acousticness" disabled>
                     </div>
-                    <div class="audio-feature-section-right">
-                        <div class="audio-feature-mute-div">
-                            <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+    
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
+                                    <label class="audio-feature-label" for="max_positivity">Max Positivity</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="max_positivity" min="40", max="400" name="max_positivity" disabled>
+                            </div>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="advanced-feature invisible">
+    
+                    <h4 class="feature-section-title invisible">Acousticness</h4>
                     <div class="audio-feature-section feature-off">
                         <div class="audio-feature-section-left">
                             <div class="audio-feature-section-label">
                                 <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
-                                <label class="audio-feature-label" for="min_acousticness">Min Acousticness</label>
+                                <label class="audio-feature-label" for="target_acousticness">Target Acousticness</label>
                                 <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="min_acousticness" min="40", max="400" name="min_acousticness" disabled>
+                            <input class="audio-feature-slider feature-off" type="range" id="target_acousticness" min="40", max="400" name="target_acousticness" disabled>
                         </div>
                         <div class="audio-feature-section-right">
                             <div class="audio-feature-mute-div">
@@ -327,32 +314,53 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="advanced-feature invisible">
-                    <div class="audio-feature-section feature-off">
-                        <div class="audio-feature-section-left">
-                            <div class="audio-feature-section-label">
-                                <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
-                                <label class="audio-feature-label" for="max_acousticness">Max Acousticness</label>
-                                <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
+                                    <label class="audio-feature-label" for="min_acousticness">Min Acousticness</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="min_acousticness" min="40", max="400" name="min_acousticness" disabled>
                             </div>
-                            <input class="audio-feature-slider feature-off" type="range" id="max_acousticness" min="40", max="400" name="max_acousticness" disabled>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="audio-feature-section-right">
-                            <div class="audio-feature-mute-div">
-                                <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                    </div>
+    
+    
+                    <div class="advanced-feature invisible">
+                        <div class="audio-feature-section feature-off">
+                            <div class="audio-feature-section-left">
+                                <div class="audio-feature-section-label">
+                                    <p class="audio-feature-limit  audio-feature-limit__lower">0%</p>
+                                    <label class="audio-feature-label" for="max_acousticness">Max Acousticness</label>
+                                    <p class="audio-feature-limit  audio-feature-limit__upper">100%</p>
+                                </div>
+                                <input class="audio-feature-slider feature-off" type="range" id="max_acousticness" min="40", max="400" name="max_acousticness" disabled>
+                            </div>
+                            <div class="audio-feature-section-right">
+                                <div class="audio-feature-mute-div">
+                                    <img class="feature-tick" src="../imgs/cancel.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+    
+            <div class="audio-features-section">
+                <button class="audio-features-submit" > Search </button>
+                <p class="audio-features-advanced">Advanced Features</p>
+            </div>
+        </form>
+     </div>
 
-        <div class="audio-features-section">
-            <button class="audio-features-submit" > Search </button>
-            <p class="audio-features-advanced">Advanced Features</p>
-        </div>
-    </form>
- </div>
+</div>
+
+

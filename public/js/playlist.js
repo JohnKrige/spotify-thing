@@ -66,6 +66,10 @@ addToExistingPlButton.addEventListener('click', async e => {
     resetPlaylistInputs();
     flashMessage('Songs added to playlist');
   } else {
+    if (resp.status === 404) {
+      flashMessage('Select a playlist from the dropdown');
+      return;
+    }
     promptTokenRefresh();
   }
 });
@@ -81,6 +85,11 @@ const newPlButton = document.querySelector('.pl-new-btn');
 
 newPlButton.addEventListener('click', async e => {
   const newName = document.querySelector('.new-pl').value;
+  if (newName === '') {
+    flashMessage('New playlists require a name');
+    return;
+  }
+
   const jsonObj = {};
   jsonObj.name = newName;
   const response = await fetch('/createPlaylist', {
@@ -94,7 +103,7 @@ newPlButton.addEventListener('click', async e => {
 
   if (response.status === 200) {
     returnPlaylists();
-    flashMessage('New playlist created');
+    flashMessage('New playlist created. You can now add songs to your new playlist');
     // const json = await response.json();
 
     newPlInput = document.querySelector('.new-pl');

@@ -44,6 +44,11 @@
   padding: 5px;
 }
 
+.new-pl-info {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
 .back-from-playlists {
   color: #373737;
   font-weight: 700;

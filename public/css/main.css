@@ -181,6 +181,11 @@
   padding: 5px;
 }
 
+.new-pl-info {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
 .back-from-playlists {
   color: #373737;
   font-weight: 700;
@@ -259,6 +264,7 @@ html, body {
   border: none;
   background-color: #BF0DFF;
   text-align: center;
+  padding: 3px 8px;
 }
 
 .num-tracks-btn img {
@@ -460,7 +466,7 @@ body {
 .top-listens-title {
   color: #BF0DFF;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .top-listens-list {
@@ -488,12 +494,12 @@ body {
   margin: 30px 0;
 }
 
-.recommendation-header .recommendation-header-title {
+.recommendation-header-title {
   color: #FF007B;
   text-align: center;
 }
 
-.recommendation-header .recommendation-help {
+.recommendation-help {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -696,5 +702,104 @@ body {
 .help-highlight {
   color: #BF0DFF;
   font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  body {
+    margin: 0 auto;
+    padding: 30px 50px;
+  }
+  .top-listens-buttons {
+    display: none;
+  }
+  .top-listens-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    margin: 0 20px;
+  }
+  .top-listens {
+    display: block;
+    margin: 50px 0;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #BF0DFF;
+  }
+  .top-listens-title, .top-listens-list {
+    text-align: start;
+  }
+  .top-listens-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+  }
+  .recommendation-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 20px;
+  }
+  .recommendation-search-display {
+    max-width: 968px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .recommendation-help {
+    position: relative;
+    margin-left: 20px;
+    font-size: 14px;
+  }
+  .recommendation-num-results {
+    margin: 0px 0 20px 0;
+    margin: 20px;
+    position: absolute;
+    right: 0;
+    top: -15px;
+    z-index: 5;
+  }
+  .recommendation-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .recommendation-features {
+    border: 3px solid #BF0DFF;
+    background-color: #1F1F1F;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .audio-features-advanced, .audio-features-submit {
+    padding: 10px;
+  }
+  .recommendation-seeds {
+    margin-bottom: 30px;
+  }
+  .results {
+    margin-top: 20px;
+  }
+  .results-header {
+    padding: 10px 0;
+  }
+  .pl-div {
+    max-width: 968px;
+    margin: 50px auto;
+  }
+  .back-from-playlists {
+    margin: 0;
+  }
+  .audio-features-advanced, .audio-features-submit, .audio-feature-mute-div,
+  .num-tracks-btn, .recommendation-help, .user-dropdown, .back-from-playlists,
+  .help-back, .results-hide-btn, .result-btn, .add-to-playlist,
+  .flash-message-close-button, .pl-button, .selected-item-remove,
+  .recommend-input-list-item {
+    cursor: pointer;
+  }
+  .add-to-playlist {
+    padding: 10px;
+    font-size: 18px;
+  }
+  .new-result-search {
+    padding: 10px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -13,7 +13,7 @@
 
 <header>  
 <div class="header">
-    <h1 class="logo">AppThang</h1> 
+    <h1 class="logo">Playlist Shamen</h1> 
     <%if (data.user) { %>
     <div class="user-section">
         <h2 class="user" ><%=data.user.display_name%></h2>
@@ -33,14 +33,6 @@
 </div>
 </header>
 
-<%- include('./help') %>
-
-<%if (!data.user) { %>
-<%- include('./home-login') %>
-<% } else { %>
-<%- include('./home-app') %>
-<% } %>
-
 <div class="flash-message invisible">
     <div class="flash-message-content">
         <p class="flash-message-text"> My man</p>
@@ -57,6 +49,14 @@
         <a class="token-refresh-btn" href="/refresh_token">Refresh Token</a>
     </div>
 </div>
+
+<%- include('./help') %>
+
+<%if (!data.user) { %>
+<%- include('./home-login') %>
+<% } else { %>
+<%- include('./home-app') %>
+<% } %>
 
 <script src="js/playlist.js"></script>
 <script src="js/displayResults.js"></script>

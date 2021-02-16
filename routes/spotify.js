@@ -22,7 +22,7 @@ const router = express.Router();
 const client_id = '774f74e3029946fe9f5c9ee7a1ee5f3d'; // Your client id
 const clientSecret = '352f29ce4cd6414cada4e6afd267675b'; // Your secret
 // const redirect_uri = 'http://localhost:3000/callback';
-const redirect_uri = 'https://snakeballs.herokuapp.com/callback'; // Your redirect uri
+const redirect_uri = 'https://snakeballs.herokuapp.com/callback';
 
 router.get('/', topListens(5, 'short'), (req, res) => {
   // Check if the spotify token has to be refreshed. Middleware this?
@@ -178,7 +178,7 @@ router.get('/genres', async (req, res) => {
     const response = await genres.json();
     res.status(200).send(response.genres);
   } else {
-    res.status(400).send();
+    res.status(genres.status).send();
   }
 });
 
@@ -211,7 +211,7 @@ router.post('/recommend', upload.none(), async (req, res) => {
     const tracks = getDesiredInfo(json.tracks);
     res.status(200).json(tracks);
   } else {
-    res.status(400).send();
+    res.status(result.status).send();
   }
 });
 
@@ -233,7 +233,7 @@ router.get('/playlists', async (req, res) => {
 
     res.status(200).json(returnObj);
   } else {
-    res.status(400).send();
+    res.status(resp.status).send();
   }
 });
 
@@ -260,7 +260,7 @@ router.post('/addToExistingPl', async (req, res) => {
   if (response.status === 201) {
     res.status(200).json('success');
   } else {
-    res.status(400).send();
+    res.status(response.status).send();
   }
 });
 
@@ -285,7 +285,7 @@ router.post('/createPlaylist', async (req, res) => {
   if (response.status === 201) {
     res.status(200).send('success');
   } else {
-    res.status(400).send();
+    res.status(response.status).send();
   }
 });
 

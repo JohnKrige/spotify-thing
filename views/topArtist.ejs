@@ -4,23 +4,27 @@
 </div>
 
 
-<div class="top-listens top-listens__tracks invisible">
-   <p class="top-listens-title">Top Tracks - Last 4 weeks</p>
-   <ul class="top-listens-list">
-      <% data.topTracks.forEach( track =>  { %>
-         <li> <%= track.name %></li> 
-      <%}) %>
-   </ul>
+<div class="top-listens-display">
+   <div class="top-listens top-listens__tracks invisible">
+      <p class="top-listens-title">Top Tracks - Past 4 weeks</p>
+      <ul class="top-listens-list">
+         <% data.topTracks.forEach( track =>  { %>
+            <%console.log(track) %>
+            <li> <%= track.name %> (<%=track.artists.toString()%>) </li> 
+         <%}) %>
+      </ul>
+   </div>
+   
+   <div class="top-listens top-listens__artists invisible">
+      <p class="top-listens-title">Top Artists - Past 4 weeks</p>
+      <ul class="top-listens-list">
+         <% data.topArtists.forEach( artist =>  { %>
+            <li> <%= artist.name %></li> 
+         <%}) %>
+      </ul>
+   </div>
 </div>
 
-<div class="top-listens top-listens__artists invisible">
-   <p class="top-listens-title">Top Artists - Last 4 weeks</p>
-   <ul class="top-listens-list">
-      <% data.topArtists.forEach( artist =>  { %>
-         <li> <%= artist.name %></li> 
-      <%}) %>
-   </ul>
-</div>
 
 
 
