@@ -7,13 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sliderStyles.css">
     <link rel="stylesheet" href="css/main.css">
-    <title>Playlist Shaman</title>
+    <title>plshmn</title>
 </head>
 <body>
 
 <header>  
 <div class="header">
-    <h1 class="logo">Playlist Shaman</h1> 
+    <div class="logo-background">
+        <h3 class="logo-text">playlist-shaman</h3>
+    </div>
     <%if (data.user) { %>
     <div class="user-section">
         <h2 class="user" ><%=data.user.display_name%></h2>
@@ -50,13 +52,18 @@
     </div>
 </div>
 
-<%- include('./help') %>
+<div class="help-website-content">
+    <%- include('./help') %>
+</div>
 
-<%if (!data.user) { %>
-<%- include('./home-login') %>
-<% } else { %>
-<%- include('./home-app') %>
-<% } %>
+<div class="main-website--content">
+    <%if (!data.user) { %>
+        <%- include('./home-login') %>
+        <% } else { %>
+        <%- include('./home-app') %>
+        <% } %>
+</div>
+
 
 <script src="js/homeScreen.js"></script>
 <script src="js/playlist.js"></script>

@@ -156,6 +156,7 @@ function displaySeeds() {
     seedsSelected[type].innerHTML = '';
     if (seeds[type].length > 0) {
       const heading = document.createElement('h3');
+      heading.setAttribute('class', 'type-selected');
       heading.innerText = `Selected ${type}s`;
       seedsSelected[type].appendChild(heading);
 
@@ -260,10 +261,13 @@ const returnGenres = async () => {
       }
 
       genreInput.addEventListener('change', () => {
-        if (seeds.genre.length >= maxNum) { return console.log('too many seeds brov'); }
+        if (seeds.genre.length >= maxNum) {
+          flashMessage('Maximum number of genres selected');
+        }
         // eslint-disable-next-line no-console
-        if (genreInput.value === 'select genre') { return console.log('invalid genre'); }
-
+        if (genreInput.value === 'select genre') {
+          return;
+        }
         seeds.genre.push(genreInput.value);
         displaySeeds();
       });
@@ -353,7 +357,7 @@ const toggleMute = (mute, feature) => {
     mute.setAttribute('src', '../imgs/tick.svg');
     slider.removeAttribute('disabled');
   } else {
-    mute.setAttribute('src', '../imgs/cancel.svg');
+    mute.setAttribute('src', '../imgs/drop-down.svg');
     slider.setAttribute('disabled', true);
   }
 

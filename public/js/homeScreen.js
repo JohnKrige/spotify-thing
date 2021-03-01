@@ -79,18 +79,20 @@ const removeFlashMessage = () => {
 };
 
 // let polarity = 'off'
-
+const html = document.querySelector('html');
 const helpButton = document.querySelector('.recommendation-help');
+const mainWebContent = document.querySelector('.main-website--content');
+
 const help = document.querySelector('.help');
 helpButton.addEventListener('click', e => {
   help.classList.remove('invisible');
-  body.classList.add('fullScreenView');
+  mainWebContent.classList.add('invisible');
 });
 
 const helpBack = document.querySelector('.help-back');
 helpBack.addEventListener('click', e => {
   help.classList.add('invisible');
-  body.classList.remove('fullScreenView');
+  mainWebContent.classList.remove('invisible');
 });
 
 const refreshModal = document.querySelector('.refresh-token');
