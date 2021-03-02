@@ -60,22 +60,23 @@ const toggleMenuImage = () => {
 
 const flashText = document.querySelector('.flash-message-text');
 
-const flashMessage = message => {
+const flashMessage = (message, time = 5000) => {
+  clearTimeout(timeout);
   flashMessageDisplay.classList.toggle('invisible');
   flashText.innerHTML = message;
   window.scrollTo(0, 0);
-  removeFlashMessage();
+  removeFlashMessage(time);
 };
 
 let apple;
 
-const removeFlashMessage = () => {
+const removeFlashMessage = time => {
   // eslint-disable-next-line no-unused-vars
   const timeout = setTimeout(() => {
     flashMessageDisplay.classList.add('invisible');
     flashText.innerHTML = '';
   },
-  5000);
+  time);
 };
 
 // let polarity = 'off'

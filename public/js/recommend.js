@@ -294,16 +294,20 @@ submit.addEventListener('click', async e => {
   const numTracks = document.querySelector('#numTracks');
   numTracks.setAttribute('value', parseInt(numTracksInput.value));
 
-  for (const type in seeds) {
-    let article = 'a';
-    if (seeds[type].length === 0) {
-      if (type === 'artist') { article = 'an'; }
+  const emptyFields = [];
 
-      flashMessage(`You have not supplied ${article} ${type}`);
-      return;
+  for (const type in seeds) {
+    if (seeds[type].length === 0) {
+      emptyFields.push(`${type}`);
     }
   }
 
+  if (emptyFields.length > 0) {
+    flashMessage(`Please supply at least one: ${emptyFields.join(', ')}.
+    You can select up to 5 artists, tracks and genres per search.`,
+    8000);
+    return;
+  }
   const recommendationForm = document.querySelector('#recommendation-form');
   const formData = new FormData(recommendationForm);
 

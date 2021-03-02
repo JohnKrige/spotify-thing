@@ -347,19 +347,13 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px 0px;
 }
 
 .header .user-section {
   display: flex;
   align-items: center;
-}
-
-.logo-text {
-  font-family: "Paprika", cursive;
-  font-size: 18px;
-  color: #ff409c;
 }
 
 .user {
@@ -725,12 +719,13 @@ body {
   margin: 5px 0;
 }
 
+.logo-img {
+  width: 100px;
+}
+
 @media (min-width: 576px) {
   .audio-feature-section-left {
     width: 90%;
-  }
-  .logo-text {
-    font-size: 24px;
   }
   .audio-feature-section-right {
     width: 10%;
@@ -770,9 +765,6 @@ body {
     border-radius: 5px;
     padding: 20px;
     background-color: #c831ff;
-  }
-  .logo-text {
-    font-size: 36px;
   }
   .top-listens-title, .top-listens-list {
     text-align: start;
@@ -842,6 +834,9 @@ body {
   }
   .flash-message {
     width: 500px;
+  }
+  .logo-img {
+    width: 160px;
   }
 }
 /*# sourceMappingURL=main.css.map */
